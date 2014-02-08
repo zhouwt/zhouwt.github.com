@@ -1,5 +1,7 @@
 ---
 layout: page
+title: zhouwt
+tagline: 世界上有10种人，一种懂二进制，一种不懂二进制
 ---
 {% include JB/setup %}
 
