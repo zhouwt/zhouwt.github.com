@@ -1,7 +1,5 @@
 ---
 layout: page
-title: zhouwt
-tagline: keep moving..
 ---
 {% include JB/setup %}
 
