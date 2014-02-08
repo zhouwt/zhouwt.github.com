@@ -8,8 +8,12 @@ tagline: keep moving..
 
 
 <ul class="posts">
-  {% for post in site.posts %}
-   {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+  
+{% if site.JB.posts_collate.provider == "custom" %}
+  {% include custom/posts_collate %}
+{% else %}
+  {% for post in posts_collate  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date: "%m" }}{% endcapture %}
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
     {% capture next_month %}{{ post.previous.date | date: "%m" }}{% endcapture %}
@@ -37,6 +41,8 @@ tagline: keep moving..
       {% endif %}
     {% endif %}
   {% endfor %}
+{% endif %}
+{% assign posts_collate = nil %}
 </ul>
 
 
